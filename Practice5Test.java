@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import android.content.Context;
+import android.app.Application;
 
 public class UserTest{
     private User user;
@@ -38,7 +39,7 @@ public class UserTest{
 
     @Test
     public void testForDBHelper(){
-        Context context = App.getContext();
+        Context context = Application.getApplication().getApplicationContext();
         dbHandler = new DatabaseHandler(, null, null, 1);
         user = dbHandler.getUser(1);
         assertNotNull(user);
