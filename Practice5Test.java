@@ -40,7 +40,7 @@ public class UserTest{
     @Test
     public void testForDBHelper(){
         
-        dbHandler = new DatabaseHandler(this.getAppContext();, null, null, 1);
+        dbHandler = new DatabaseHandler(this.useAppContext(), null, null, 1);
         user = dbHandler.getUser(1);
         assertNotNull(user);
     }
