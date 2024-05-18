@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import androidx.test.platform.app.InstrumentationRegistry;
+import android.content.Context;
 
 public class UserTest{
     private User user;
