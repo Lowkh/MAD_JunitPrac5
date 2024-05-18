@@ -1,18 +1,17 @@
 package sg.edu.np.mad.madpractical5;
-import android.content.Context;
-import androidx.test.platform.app.InstrumentationRegistry;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-
+import android.content.Context;
 
 public class UserTest{
     private User user;
     private UserAdapter userAdapter;
     private DatabaseHandler dbHandler;
-    private Context appContext;
+
 
     @Test
     public void testForUserAdapterClass(){
@@ -39,8 +38,8 @@ public class UserTest{
 
     @Test
     public void testForDBHelper(){
-        appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        dbHandler = new DatabaseHandler(appContext, null, null, 1);
+        Context context = App.getContext();
+        dbHandler = new DatabaseHandler(, null, null, 1);
         user = dbHandler.getUser(1);
         assertNotNull(user);
     }
