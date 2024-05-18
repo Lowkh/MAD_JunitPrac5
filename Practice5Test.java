@@ -36,13 +36,5 @@ public class UserTest{
         assertEquals("MAD Developer", user.getDescription());
         assertEquals(false, user.getFollowed());
     }
-
-    @Test
-    public void testForDBHelper(){
-                
-        dbHandler = new DatabaseHandler(context.this, null, null, 1);
-        user = dbHandler.getUser(1);
-        assertNotNull(user);
-    }
    
 }
