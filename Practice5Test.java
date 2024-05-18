@@ -12,7 +12,7 @@ public class UserTest{
     private User user;
     private UserAdapter userAdapter;
     private DatabaseHandler dbHandler;
-
+    private Context context;
 
     @Test
     public void testForUserAdapterClass(){
@@ -39,8 +39,8 @@ public class UserTest{
 
     @Test
     public void testForDBHelper(){
-        
-        dbHandler = new DatabaseHandler(this.useAppContext(), null, null, 1);
+                
+        dbHandler = new DatabaseHandler(context.this, null, null, 1);
         user = dbHandler.getUser(1);
         assertNotNull(user);
     }
