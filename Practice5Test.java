@@ -38,7 +38,7 @@ public class UserTest{
     public void testForDBHelper(){
         dbHandler = new DatabaseHandler(this, null, null, 1);
         user = dbHandler.getUser(1);
-        assertNotNull(user)
+        assertNotNull(user);
     }
    
 }
