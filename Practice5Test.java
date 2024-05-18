@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class UserTest{
     private User user;
     private UserAdapter userAdapter;
+    private DatabaseHandler dbHandler;
 
     @Test
     public void testForUserAdapterClass(){
@@ -33,4 +34,11 @@ public class UserTest{
         assertEquals(false, user.getFollowed());
     }
 
+    @Test
+    public void testForDBHelper(){
+        dbHandler = new DatabaseHandler(this, null, null, 1);
+        user = dbHandler.getUser(1);
+        assertNotNull(user)
+    }
+   
 }
