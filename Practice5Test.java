@@ -5,11 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 public class UserTest{
     private User user;
     private UserAdapter userAdapter;
     private DatabaseHandler dbHandler;
+    private Context appContext;
 
     @Test
     public void testForUserAdapterClass(){
@@ -36,7 +38,8 @@ public class UserTest{
 
     @Test
     public void testForDBHelper(){
-        dbHandler = new DatabaseHandler(this, null, null, 1);
+        appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        dbHandler = new DatabaseHandler(appContext, null, null, 1);
         user = dbHandler.getUser(1);
         assertNotNull(user);
     }
